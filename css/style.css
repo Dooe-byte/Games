@@ -1,0 +1,183 @@
+body {
+  font-family: "Unica One", sans-serif;
+  text-align: center;
+  padding: 6em;
+  margin: 0;
+  overflow-x: hidden;
+  background: transparent; /* Removed background color */
+}
+
+/* Background video */
+#smoke-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  pointer-events: none;
+  opacity: 1; /* Full visibility */
+  animation: none; /* Remove fade animation */
+}
+
+/* Headings */
+h2 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-shadow: none; /* Removed color shadow */
+  color: white; /* White text for readability */
+}
+
+/* YES/NO button container spacing */
+#group-controls {
+  margin-bottom: 1.5rem;
+}
+
+/* Card containers */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 3rem auto;
+  pointer-events: auto;
+}
+
+.card-container img {
+  width: 90px;
+  border-radius: 8px;
+  box-shadow: none; /* Remove box shadows */
+  transition: transform 0.3s ease;
+}
+
+.card-container img:hover {
+  transform: scale(1.05);
+}
+
+#card-pick {
+  margin-top: 5px;
+}
+
+#card-group {
+  margin-top: -15px;
+}
+
+/* Final reveal animation */
+.final-reveal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  min-height: 300px;
+  width: 100%;
+}
+
+.final-reveal img {
+  width: 150px;
+  animation: smoothReveal 0.8s ease-out forwards,
+    floatGlow 1.5s ease-in-out infinite alternate,
+    floatUp 5s ease-in-out infinite;
+  opacity: 0;
+  transform: scale(0.6) translateY(60px);
+  transform-origin: center center;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+@keyframes smoothReveal {
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes floatGlow {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.05) translateY(-10px); }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  50% { transform: translateY(-100px) rotate(5deg); opacity: 0.7; }
+  100% { transform: translateY(-200px) rotate(-5deg); opacity: 0; }
+}
+
+/* Buttons */
+button {
+  font-family: "Unica One", sans-serif;
+  background: rgba(0,0,0,0.4); /* Transparent background */
+  color: white;
+  border: 2px solid white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 2em 1em;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #group-controls {
+    margin-bottom: 1rem;
+  }
+
+  .card-container img {
+    width: 70px;
+  }
+
+  .final-reveal img {
+    width: 110px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-container img {
+    width: 55px;
+  }
+
+  .final-reveal img {
+    width: 90px;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
