@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pick a Card</title>
+  </head>
+  <body>
+    <video autoplay muted loop playsinline id="smoke-bg">
+      <source src="404.mp4" type="video/mp4">
+    </video>
+    <div id="stage">
+      <h2 id="main-title">Chwazi yon kat & memorize saw chwazi an</h2>
+      <div id="step-1">
+        <div id="card-pick" class="card-container"></div>
+        <button onclick="startTrick()">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Chwazi Youn
+        </button>
+      </div>
+      <div id="step-2" class="hidden">
+        <h2>Eske kat ou te chwazi an la?</h2>
+        <div id="group-controls">
+          <button onclick="answer(true)"><i class="fa-solid fa-check"></i> WI</button>
+          <button onclick="answer(false)"><i class="fa-solid fa-xmark"></i> NON</button>
+        </div>
+        <div id="card-group" class="card-container"></div>
+      </div>
+      <div id="step-3" class="hidden">
+        <h2>Ou Te Chwazi</h2>
+        <div id="revealed-card" class="card-container final-reveal"></div>
+        <button onclick="shuffleDeck()">
+          <i class="fa-solid fa-shuffle"></i> Rekomanse
+        </button>
+      </div>
+    </div>
+    <script src="404.js" charset="utf-8"></script>
+  </body>
+</html>
